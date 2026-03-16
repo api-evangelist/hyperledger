@@ -1,0 +1,44 @@
+aid: hyperledger
+name: Hyperledger
+description: >-
+  Hyperledger is an open source collaborative effort created to advance cross-industry blockchain technologies under the Linux Foundation. It hosts enterprise-grade blockchain frameworks including Fabric, Sawtooth, Besu, and Iroha, along with tools like Caliper and Explorer for blockchain development and operations.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Blockchain
+  - Enterprise
+  - Distributed Ledger
+  - Linux Foundation
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/hyperledger/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: hyperledger:hyperledger-api
+    name: Hyperledger API
+    description: >-
+      Programmatic access to Hyperledger blockchain frameworks, smart contract APIs, and enterprise ledger tools.
+    humanURL: https://www.hyperledger.org/use
+    tags:
+  - Blockchain
+  - Enterprise
+  - Distributed Ledger
+  - Linux Foundation
+    properties:
+      - type: Documentation
+        url: https://www.hyperledger.org/use
+common:
+  - type: Documentation
+    name: Hyperledger Documentation
+    description: Official documentation for Hyperledger.
+    url: https://www.hyperledger.org/use
+  - type: GitHubOrg
+    name: Hyperledger GitHub
+    description: Source code and repositories for Hyperledger.
+    url: https://github.com/hyperledger
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
