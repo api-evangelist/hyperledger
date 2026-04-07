@@ -23,10 +23,10 @@ apis:
       Programmatic access to Hyperledger blockchain frameworks, smart contract APIs, and enterprise ledger tools.
     humanURL: https://www.hyperledger.org/use
     tags:
-  - Blockchain
-  - Enterprise
-  - Distributed Ledger
-  - Linux Foundation
+      - Blockchain
+      - Enterprise
+      - Distributed Ledger
+      - Linux Foundation
     properties:
       - type: Documentation
         url: https://www.hyperledger.org/use
