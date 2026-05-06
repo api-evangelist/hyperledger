@@ -1,0 +1,61 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hyperledger Besu JSON-RPC API
+  description: Hyperledger Besu is an Ethereum client written in Java that exposes a JSON-RPC 2.0 API over HTTP and WebSockets.
+    The API provides namespaces including admin, debug, eth, net, web3, txpool, miner, and trace for interacting with Ethereum-compatible
+    networks, smart contracts, and node operations.
+  tags:
+  - Hyperledger
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: hyperledger
+    baseUri: https://besu.example.com
+    description: Hyperledger Besu JSON-RPC API HTTP API.
+    resources:
+    - name: resource
+      path: /
+      operations:
+      - name: jsonrpccall
+        method: POST
+        description: JSON-RPC endpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: hyperledger-rest
+    description: REST adapter for Hyperledger Besu JSON-RPC API.
+    resources:
+    - path: /
+      name: jsonrpccall
+      operations:
+      - method: POST
+        name: jsonrpccall
+        description: JSON-RPC endpoint
+        call: hyperledger.jsonrpccall
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: hyperledger-mcp
+    transport: http
+    description: MCP adapter for Hyperledger Besu JSON-RPC API for AI agent use.
+    tools:
+    - name: jsonrpccall
+      description: JSON-RPC endpoint
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hyperledger.jsonrpccall
+      outputParameters:
+      - type: object
+        mapping: $.
