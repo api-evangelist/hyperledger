@@ -4,157 +4,99 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Hyperledger
 providerId: hyperledger
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Blockchain
   - Distributed Ledger
-  - Enterprise
+  - Open Source
   - Linux Foundation
   - Smart Contracts
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: Hyperledger (now stewarded by LF Decentralized Trust under the Linux Foundation) is
+  a free open-source ecosystem of blockchain frameworks and tools (Fabric, Besu, Indy, Iroha, Cacti,
+  Firefly, etc). The projects themselves carry no license fee, no API consumption charges, and no
+  per-call rate limits imposed by the foundation. Commercial offerings are sold separately by member
+  vendors (IBM Blockchain Platform, Kaleido, Oracle Blockchain, R3, ConsenSys, etc) and are out of
+  scope for the foundation pricing surface. Linux Foundation membership tiers fund the foundation
+  but are not API consumption tiers.
+sources:
+  - https://lfdecentralizedtrust.org/projects
+  - https://www.hyperledger.org/
+  - https://www.hyperledger.org/about/charter
 plans:
-  - id: hyperledger-free
-    name: Free
+  - id: hyperledger-open-source
+    name: Open Source (Apache 2.0)
     type: freemium
-    description: Free entry tier for the Hyperledger API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    description: All Hyperledger / LF Decentralized Trust projects are released under the Apache
+      License 2.0 (or compatible OSI licenses). There is no foundation-imposed runtime cost, license
+      fee, or call-based pricing for self-hosted deployments.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://besu.example.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://besu.example.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Hyperledger Besu API
-      - name: Hyperledger Fabric API
-      - name: Hyperledger FireFly API
-      - name: Hyperledger Indy API
-      - name: Hyperledger Cacti API
-  - id: hyperledger-pro
-    name: Professional
-    type: paid
-    description: Production tier for Hyperledger. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://besu.example.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://besu.example.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
+      - label: Self-hosted node / chaincode runtime
+        name: self_hosted
+        type: flat
+        metric: node
         limit: -1
-        timeFrame: month
+        timeFrame: usage
         geo: global
-        domains:
-          - https://besu.example.com
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: '0.00'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Hyperledger Besu API
-      - name: Hyperledger Fabric API
-      - name: Hyperledger FireFly API
-      - name: Hyperledger Indy API
-      - name: Hyperledger Cacti API
-  - id: hyperledger-enterprise
-    name: Enterprise
+      - name: Hyperledger Fabric
+      - name: Hyperledger Besu
+      - name: Hyperledger Indy
+      - name: Hyperledger Iroha
+      - name: Hyperledger Cacti
+      - name: Hyperledger Firefly
+      - name: Hyperledger Caliper
+      - name: Apache 2.0 license
+      - name: Community support (mailing lists, Discord, GitHub)
+  - id: hyperledger-lf-membership
+    name: LF Decentralized Trust Membership
+    type: subscription
+    description: Linux Foundation membership tiers (Premier, General, Associate) fund the foundation
+      and provide governance participation rather than API consumption rights. Membership pricing
+      is not API pricing and is published separately by the LF.
+    entries:
+      - label: Membership dues
+        name: membership_dues
+        type: subscription
+        metric: year
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: see https://lfdecentralizedtrust.org/membership
+        userMultiplied: false
+    elements:
+      - name: Governance and voting rights
+      - name: Marketing co-promotion
+      - name: Training and certification discounts
+      - name: Not API consumption pricing
+  - id: hyperledger-commercial-vendors
+    name: Member Commercial Offerings
     type: enterprise
-    description: Custom-negotiated tier for Hyperledger. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
+    description: Managed-service and enterprise-supported builds are sold by ecosystem vendors (IBM,
+      Oracle, AWS Managed Blockchain, Kaleido, Hyperledger Iroha vendors, etc). These prices vary
+      per vendor and are not published by the Hyperledger / LF Decentralized Trust foundation.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Vendor-priced offering
+        name: vendor_offering
+        type: subscription
+        metric: varies
         limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://besu.example.com
+        timeFrame: usage
+        geo: global
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://besu.example.com
-        unit: 1
-        price: custom
+        price: see vendor (e.g. IBM Blockchain, Kaleido, AWS Managed Blockchain)
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Hyperledger Besu API
-      - name: Hyperledger Fabric API
-      - name: Hyperledger FireFly API
-      - name: Hyperledger Indy API
-      - name: Hyperledger Cacti API
+      - name: IBM Blockchain Platform / IBM Cloud
+      - name: AWS Managed Blockchain
+      - name: Oracle Blockchain Platform
+      - name: Kaleido
+      - name: ConsenSys (Besu)
+      - name: R3 (Corda interop via Cacti)
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

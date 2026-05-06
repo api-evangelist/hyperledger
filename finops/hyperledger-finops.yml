@@ -1,168 +1,104 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Hyperledger
+providerId: hyperledger
+created: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - Blockchain
+  - Open Source
+description: 'FOCUS-aligned FinOps for Hyperledger: open-source frameworks have no vendor invoice;
+  cost surfaces are infrastructure (cloud / on-prem) for self-hosting plus optional vendor-managed
+  offerings billed by ecosystem partners.'
+sources:
+  - https://lfdecentralizedtrust.org/projects
+  - https://www.hyperledger.org/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Hyperledger
-providerId: hyperledger
-publisherName: Hyperledger
-serviceCategory: API
-created: '2026-05-04'
-modified: '2026-05-04'
-tags:
-  - Blockchain
-  - Distributed Ledger
-  - Enterprise
-  - Linux Foundation
-  - Smart Contracts
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Hyperledger API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+publisherName: The Linux Foundation (LF Decentralized Trust)
+serviceCategory: Blockchain & Distributed Ledger
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Open Source (no foundation cost)
+  billingFrequency: N/A (foundation) / Vendor-defined (managed offerings)
   billingCurrency: USD
   chargeCategories:
     - Usage
     - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: Hyperledger
-  ServiceCategory: Developer Tools / API
-  ProviderName: Hyperledger
-  PublisherName: Hyperledger
-  InvoiceIssuerName: Hyperledger
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceCategory: Blockchain & Distributed Ledger
+  ProviderName: Hyperledger / LF Decentralized Trust
+  PublisherName: The Linux Foundation
+  InvoiceIssuerName: varies (cloud provider for self-hosted; vendor for managed)
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: node_compute_hours
+    description: Compute-hours for self-hosted Hyperledger nodes (peers, orderers, validators); billed
+      by underlying cloud or on-prem infrastructure rather than the foundation.
+    unit: instance-hour
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
+      - framework
+      - cloud
       - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
+      - node_role
+  - name: ledger_storage
+    description: GB-month of ledger / world-state / chaindata storage attached to nodes.
+    unit: GB-month
+    aggregation: avg
+    dimensions:
+      - framework
+      - tier
+  - name: network_egress
+    description: Network egress for peer-to-peer gossip and external API consumers.
     unit: GB
     aggregation: sum
     dimensions:
-      - api
+      - framework
       - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+  - name: vendor_managed_service
+    description: Managed-blockchain billing line items charged by ecosystem vendors (IBM Blockchain,
+      AWS Managed Blockchain, Kaleido, Oracle Blockchain).
+    unit: varies
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Hyperledger Besu API
-    baseURL: https://besu.example.com
-    tags:
-      - Blockchain
-      - Ethereum
-      - Json-Rpc
-      - Smart Contracts
-    serviceName: Hyperledger Besu API
-    serviceCategory: API
-  - name: Hyperledger Fabric API
-    baseURL: ''
-    tags:
-      - Blockchain
-      - Distributed Ledger
-      - Permissioned
-      - Smart Contracts
-    serviceName: Hyperledger Fabric API
-    serviceCategory: API
-  - name: Hyperledger FireFly API
-    baseURL: ''
-    tags:
-      - Blockchain
-      - Multiparty
-      - Tokens
-      - Web3
-    serviceName: Hyperledger FireFly API
-    serviceCategory: API
-  - name: Hyperledger Indy API
-    baseURL: ''
-    tags:
-      - Decentralized Identity
-      - Did
-      - Identity
-      - Self-Sovereign Identity
-    serviceName: Hyperledger Indy API
-    serviceCategory: API
-  - name: Hyperledger Cacti API
-    baseURL: ''
-    tags:
-      - Blockchain
-      - Interoperability
-      - Cross-Chain
-    serviceName: Hyperledger Cacti API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - vendor
+      - sku
+  - name: transactions_submitted
+    description: Operational throughput meter; useful for unit economics even though not directly
+      billed.
+    unit: transaction
+    aggregation: sum
+    dimensions:
+      - framework
+      - channel
+      - chaincode
+principles:
+  - name: Visibility
+    description: Hyperledger itself produces no invoice. Track cost via the underlying cloud or on-prem
+      infrastructure billing (AWS Cost Explorer, Azure Cost Management, GCP Billing, Kubernetes cost
+      tools like OpenCost). For managed offerings, use the vendor's billing portal.
+  - name: Allocation
+    description: Tag node infrastructure by network / consortium / channel so that cost can be allocated
+      back to the participating organization. Use Kubernetes namespaces and labels when running Fabric
+      / Besu under K8s.
+  - name: Optimization
+    description: Right-size peer and orderer nodes; use spot/preemptible nodes for non-critical peers;
+      consolidate networks where governance allows; consider managed offerings only when in-house
+      operational cost exceeds vendor markup.
+  - name: Accountability
+    description: Establish per-consortium and per-channel cost ownership. For managed offerings,
+      review monthly vendor invoices and validate node count, transaction volume, and storage size
+      against expectations.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
