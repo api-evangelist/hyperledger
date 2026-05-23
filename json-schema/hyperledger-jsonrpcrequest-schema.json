@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JsonRpcRequest",
+  "title": "JsonRpcRequest",
+  "type": "object",
+  "required": [
+    "jsonrpc",
+    "method",
+    "id"
+  ],
+  "properties": {
+    "jsonrpc": {
+      "type": "string",
+      "enum": [
+        "2.0"
+      ]
+    },
+    "method": {
+      "type": "string",
+      "description": "Method name, e.g. `eth_blockNumber`, `admin_peers`, `debug_traceTransaction`, `net_version`, `web3_clientVersion`, `txpool_status`, `trace_block`.",
+      "examples": [
+        "eth_blockNumber",
+        "eth_getBalance",
+        "eth_sendRawTransaction",
+        "admin_peers",
+        "admin_nodeInfo",
+        "debug_traceTransaction",
+        "net_version",
+        "web3_clientVersion",
+        "txpool_status",
+        "trace_block"
+      ]
+    },
+    "params": {
+      "type": "array",
+      "items": {}
+    },
+    "id": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

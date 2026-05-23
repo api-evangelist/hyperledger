@@ -1,0 +1,19 @@
+name: Hyperledger Domain Vocabulary
+provider: Hyperledger
+providerId: hyperledger
+description: Tag-derived vocabulary for the Hyperledger API surface; sourced from openapi/ tags.
+terms:
+- term: Admin
+  description: Administrative methods for managing nodes and peers.
+- term: Debug
+  description: Debug methods for inspecting blocks, transactions, and state.
+- term: Eth
+  description: Standard Ethereum JSON-RPC methods.
+- term: Net
+  description: Network-related methods.
+- term: Web3
+  description: Web3 client information methods.
+- term: TxPool
+  description: Transaction pool inspection methods.
+- term: Trace
+  description: Transaction tracing methods.

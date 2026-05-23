@@ -1,0 +1,40 @@
+{
+  "provider": "Hyperledger",
+  "providerId": "hyperledger",
+  "kind": "json-structure",
+  "description": "Structural overview of the Hyperledger API surface; extracted from openapi/.",
+  "schemaCount": 2,
+  "operationCount": 1,
+  "schemas": [
+    {
+      "name": "JsonRpcRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "jsonrpc",
+        "method",
+        "id"
+      ]
+    },
+    {
+      "name": "JsonRpcResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "jsonrpc",
+        "id"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/",
+      "operationId": "jsonRpcCall",
+      "summary": "JSON-RPC endpoint",
+      "tags": [
+        "Eth"
+      ]
+    }
+  ]
+}
