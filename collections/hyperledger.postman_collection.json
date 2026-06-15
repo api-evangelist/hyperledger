@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "c3c7aa0f-0fc8-43e0-8308-8982c1cd54a9",
+      "name": "Admin",
+      "description": {
+        "content": "Administrative methods for managing nodes and peers.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "b28af875-339c-4029-8604-2bfd408a839b",
+      "name": "Debug",
+      "description": {
+        "content": "Debug methods for inspecting blocks, transactions, and state.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "3a5b967d-0514-4f4d-a434-ff6e108cf09d",
+      "name": "Eth",
+      "description": {
+        "content": "Standard Ethereum JSON-RPC methods.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6849aae9-9d58-44d7-8241-77a04b4ee6e1",
+          "name": "JSON-RPC endpoint",
+          "request": {
+            "name": "JSON-RPC endpoint",
+            "description": {
+              "content": "Single endpoint accepting JSON-RPC 2.0 requests. The `method` field determines the operation invoked across admin, debug, eth, net, web3, txpool, miner, and trace namespaces.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jsonrpc\": \"<string>\",\n  \"method\": \"<string>\",\n  \"id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f6906c2-de96-41f5-9ff3-d76da8fd3fa3",
+              "name": "JSON-RPC response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jsonrpc\": \"<string>\",\n  \"method\": \"eth_blockNumber\",\n  \"id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 5965,\n  \"result\": \"\",\n  \"error\": {\n    \"code\": 2884,\n    \"message\": \"string\",\n    \"data\": \"\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ebfb3de8-29d9-418f-8933-2ea78b508537",
+      "name": "Net",
+      "description": {
+        "content": "Network-related methods.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "07b5c169-1d8e-4466-a08d-6e64ed8cc67e",
+      "name": "Web3",
+      "description": {
+        "content": "Web3 client information methods.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "cd3550bb-1b25-4cf0-b710-d4c97170dd1f",
+      "name": "TxPool",
+      "description": {
+        "content": "Transaction pool inspection methods.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "791c6294-9681-471a-a4ff-1d262aa40609",
+      "name": "Trace",
+      "description": {
+        "content": "Transaction tracing methods.",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://besu.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a09075bf-6197-4640-ac58-30afb3a4b7c9",
+    "name": "Hyperledger Besu JSON-RPC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hyperledger Besu is an Ethereum client written in Java that exposes a JSON-RPC 2.0 API over HTTP and WebSockets. The API provides namespaces including admin, debug, eth, net, web3, txpool, miner, and trace for interacting with Ethereum-compatible networks, smart contracts, and node operations.\n\nContact Support:\n Name: Hyperledger Besu Community",
+      "type": "text/plain"
+    }
+  }
+}

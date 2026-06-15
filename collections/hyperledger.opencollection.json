@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hyperledger Besu JSON-RPC API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Eth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "JSON-RPC endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://besu.example.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Single endpoint accepting JSON-RPC 2.0 requests. The `method` field determines the operation invoked across admin, debug, eth, net, web3, txpool, miner, and trace namespaces."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
