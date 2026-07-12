@@ -105,6 +105,8 @@ apis:
       - type: GitHub
         url: https://github.com/hyperledger/cacti
 common:
+  - type: DomainSecurity
+    url: security/hyperledger-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/hyperledger-project
   - type: Documentation
@@ -121,6 +123,8 @@ common:
     url: https://github.com/LF-Decentralized-Trust
   - type: Wiki
     url: https://wiki.lfdecentralizedtrust.org/
+  - url: https://www.lfdecentralizedtrust.org/blog/rss.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
