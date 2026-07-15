@@ -105,6 +105,8 @@ apis:
       - type: GitHub
         url: https://github.com/hyperledger/cacti
 common:
+  - type: AgenticAccess
+    url: agentic-access/hyperledger-agentic-access.yml
   - type: DomainSecurity
     url: security/hyperledger-domain-security.yml
   - type: LinkedIn
