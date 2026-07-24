@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: Hyperledger Besu JSON-RPC Eth API
+  description: Hyperledger Besu is an Ethereum client written in Java that exposes a JSON-RPC 2.0 API over HTTP and WebSockets. The API provides namespaces including admin, debug, eth, net, web3, txpool, miner, and trace for interacting with Ethereum-compatible networks, smart contracts, and node operations.
+  version: '1.0'
+  contact:
+    name: Hyperledger Besu Community
+    url: https://besu.hyperledger.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://besu.example.com
+  description: Besu JSON-RPC endpoint
+tags:
+- name: Eth
+  description: Standard Ethereum JSON-RPC methods.
+paths:
+  /:
+    post:
+      summary: JSON-RPC endpoint
+      description: Single endpoint accepting JSON-RPC 2.0 requests. The `method` field determines the operation invoked across admin, debug, eth, net, web3, txpool, miner, and trace namespaces.
+      operationId: jsonRpcCall
+      tags:
+      - Eth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonRpcRequest'
+      responses:
+        '200':
+          description: JSON-RPC response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonRpcResponse'
+components:
+  schemas:
+    JsonRpcResponse:
+      type: object
+      required:
+      - jsonrpc
+      - id
+      properties:
+        jsonrpc:
+          type: string
+          enum:
+          - '2.0'
+        id:
+          oneOf:
+          - type: integer
+          - type: string
+        result: {}
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+            data: {}
+    JsonRpcRequest:
+      type: object
+      required:
+      - jsonrpc
+      - method
+      - id
+      properties:
+        jsonrpc:
+          type: string
+          enum:
+          - '2.0'
+        method:
+          type: string
+          description: Method name, e.g. `eth_blockNumber`, `admin_peers`, `debug_traceTransaction`, `net_version`, `web3_clientVersion`, `txpool_status`, `trace_block`.
+          examples:
+          - eth_blockNumber
+          - eth_getBalance
+          - eth_sendRawTransaction
+          - admin_peers
+          - admin_nodeInfo
+          - debug_traceTransaction
+          - net_version
+          - web3_clientVersion
+          - txpool_status
+          - trace_block
+        params:
+          type: array
+          items: {}
+        id:
+          oneOf:
+          - type: integer
+          - type: string
+externalDocs:
+  description: Hyperledger Besu API Reference
+  url: https://besu.hyperledger.org/public-networks/reference/api
