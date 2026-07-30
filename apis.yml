@@ -6,9 +6,21 @@ description: >-
   blockchain frameworks including Fabric, Besu, Indy, Iroha, and Cacti, along with tools like Firefly and Caliper for
   blockchain development, identity, and operations.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hyperledger.png
 tags:
   - Blockchain
   - Distributed Ledger
@@ -20,90 +32,86 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/hyperledger/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: hyperledger:hyperledger-besu-api
-    name: Hyperledger Besu API
-    description: >-
-      Hyperledger Besu is an Ethereum client written in Java exposing JSON-RPC APIs for blockchain interaction including
-      admin, debug, eth, net, web3, txpool, miner, and trace namespaces.
-    humanURL: https://besu.hyperledger.org/
-    baseURL: https://besu.example.com
-    tags:
-      - Blockchain
-      - Ethereum
-      - Json-Rpc
-      - Smart Contracts
-    properties:
-      - type: Documentation
-        url: https://besu.hyperledger.org/public-networks/reference/api
-      - type: GitHub
-        url: https://github.com/hyperledger/besu
-      - type: OpenAPI
-        url: openapi/hyperledger-openapi.yml
-  - aid: hyperledger:hyperledger-fabric-api
-    name: Hyperledger Fabric API
-    description: >-
-      Hyperledger Fabric is a permissioned distributed ledger platform. Programmatic access is provided via the Fabric
-      Gateway, peer gRPC APIs, and SDKs for chaincode invocation, ledger queries, and channel administration.
-    humanURL: https://hyperledger-fabric.readthedocs.io/
-    tags:
-      - Blockchain
-      - Distributed Ledger
-      - Permissioned
-      - Smart Contracts
-    properties:
-      - type: Documentation
-        url: https://hyperledger-fabric.readthedocs.io/en/latest/
-      - type: GatewayDocs
-        url: https://hyperledger.github.io/fabric-gateway/
-      - type: GitHub
-        url: https://github.com/hyperledger/fabric
-  - aid: hyperledger:hyperledger-firefly-api
-    name: Hyperledger FireFly API
-    description: >-
-      Hyperledger FireFly is a multiparty system orchestration framework providing REST APIs for tokens, messages,
-      identities, contracts, and events across multiple blockchain protocols.
-    humanURL: https://hyperledger.github.io/firefly/
-    tags:
-      - Blockchain
-      - Multiparty
-      - Tokens
-      - Web3
-    properties:
-      - type: Documentation
-        url: https://hyperledger.github.io/firefly/latest/reference/api/
-      - type: GitHub
-        url: https://github.com/hyperledger/firefly
-  - aid: hyperledger:hyperledger-indy-api
-    name: Hyperledger Indy API
-    description: >-
-      Hyperledger Indy provides tools, libraries, and reusable components for decentralized identities rooted on
-      blockchains. APIs are exposed via the Indy SDK and Indy Node REST endpoints.
-    humanURL: https://www.hyperledger.org/projects/hyperledger-indy
-    tags:
-      - Decentralized Identity
-      - Did
-      - Identity
-      - Self-Sovereign Identity
-    properties:
-      - type: Documentation
-        url: https://hyperledger-indy.readthedocs.io/
-      - type: GitHub
-        url: https://github.com/hyperledger/indy-node
-  - aid: hyperledger:hyperledger-cacti-api
-    name: Hyperledger Cacti API
-    description: >-
-      Hyperledger Cacti (formerly Cactus) is a pluggable enterprise-grade framework for cross-chain transactions,
-      providing connector plugins and REST APIs for interoperability across DLTs.
-    humanURL: https://hyperledger-cacti.github.io/cacti/
-    tags:
-      - Blockchain
-      - Interoperability
-      - Cross-Chain
-    properties:
-      - type: Documentation
-        url: https://hyperledger-cacti.github.io/cacti/
-      - type: GitHub
-        url: https://github.com/hyperledger/cacti
+- aid: hyperledger:hyperledger-fabric-api
+  name: Hyperledger Fabric API
+  description: >-
+    Hyperledger Fabric is a permissioned distributed ledger platform. Programmatic access is provided
+    via the Fabric Gateway, peer gRPC APIs, and SDKs for chaincode invocation, ledger queries, and channel
+    administration.
+  humanURL: https://hyperledger-fabric.readthedocs.io/
+  tags:
+  - Blockchain
+  - Distributed Ledger
+  - Permissioned
+  - Smart Contracts
+  properties:
+  - type: Documentation
+    url: https://hyperledger-fabric.readthedocs.io/en/latest/
+  - type: GatewayDocs
+    url: https://hyperledger.github.io/fabric-gateway/
+  - type: GitHub
+    url: https://github.com/hyperledger/fabric
+- aid: hyperledger:hyperledger-firefly-api
+  name: Hyperledger FireFly API
+  description: >-
+    Hyperledger FireFly is a multiparty system orchestration framework providing REST APIs for tokens,
+    messages, identities, contracts, and events across multiple blockchain protocols.
+  humanURL: https://hyperledger.github.io/firefly/
+  tags:
+  - Blockchain
+  - Multiparty
+  - Tokens
+  - Web3
+  properties:
+  - type: Documentation
+    url: https://hyperledger.github.io/firefly/latest/reference/api/
+  - type: GitHub
+    url: https://github.com/hyperledger/firefly
+- aid: hyperledger:hyperledger-indy-api
+  name: Hyperledger Indy API
+  description: >-
+    Hyperledger Indy provides tools, libraries, and reusable components for decentralized identities rooted
+    on blockchains. APIs are exposed via the Indy SDK and Indy Node REST endpoints.
+  humanURL: https://www.hyperledger.org/projects/hyperledger-indy
+  tags:
+  - Decentralized Identity
+  - Did
+  - Identity
+  - Self-Sovereign Identity
+  properties:
+  - type: Documentation
+    url: https://hyperledger-indy.readthedocs.io/
+  - type: GitHub
+    url: https://github.com/hyperledger/indy-node
+- aid: hyperledger:hyperledger-cacti-api
+  name: Hyperledger Cacti API
+  description: >-
+    Hyperledger Cacti (formerly Cactus) is a pluggable enterprise-grade framework for cross-chain transactions,
+    providing connector plugins and REST APIs for interoperability across DLTs.
+  humanURL: https://hyperledger-cacti.github.io/cacti/
+  tags:
+  - Blockchain
+  - Interoperability
+  - Cross-Chain
+  properties:
+  - type: Documentation
+    url: https://hyperledger-cacti.github.io/cacti/
+  - type: GitHub
+    url: https://github.com/hyperledger/cacti
+- aid: hyperledger:hyperledger-eth-api
+  name: Hyperledger Eth API
+  description: Standard Ethereum JSON-RPC methods.
+  humanURL: https://besu.hyperledger.org/
+  baseURL: https://besu.example.com
+  tags:
+  - Eth
+  properties:
+  - type: OpenAPI
+    url: openapi/hyperledger-eth-api-openapi.yml
+  - type: Documentation
+    url: https://besu.hyperledger.org/public-networks/reference/api
+  - type: GitHub
+    url: https://github.com/hyperledger/besu
 common:
   - type: AgenticAccess
     url: agentic-access/hyperledger-agentic-access.yml
