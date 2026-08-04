@@ -1,0 +1,14 @@
+{
+  "provider": "hyperledger",
+  "sources": [
+    "hyperledger-eth-api-openapi.yml"
+  ],
+  "outputs": [
+    "hyperledger-eth-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
