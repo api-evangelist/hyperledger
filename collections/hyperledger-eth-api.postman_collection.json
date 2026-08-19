@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "f36d10e7-dffd-4ec2-b7ae-63fe21746e7a",
+      "name": "Eth",
+      "description": {
+        "content": "Standard Ethereum JSON-RPC methods.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5bb4a174-e8f8-4310-a0c3-76e6e13486b9",
+          "name": "JSON-RPC endpoint",
+          "request": {
+            "name": "JSON-RPC endpoint",
+            "description": {
+              "content": "Single endpoint accepting JSON-RPC 2.0 requests. The `method` field determines the operation invoked across admin, debug, eth, net, web3, txpool, miner, and trace namespaces.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jsonrpc\": \"<string>\",\n  \"method\": \"<string>\",\n  \"id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e757e574-6fa8-4143-b358-c8b3382030f7",
+              "name": "JSON-RPC response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jsonrpc\": \"<string>\",\n  \"method\": \"eth_blockNumber\",\n  \"id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 767,\n  \"result\": \"\",\n  \"error\": {\n    \"code\": 8538,\n    \"message\": \"string\",\n    \"data\": \"\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://besu.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b4c241a7-1f57-4bab-a9ca-843df2468e59",
+    "name": "Hyperledger Besu JSON-RPC Eth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hyperledger Besu is an Ethereum client written in Java that exposes a JSON-RPC 2.0 API over HTTP and WebSockets. The API provides namespaces including admin, debug, eth, net, web3, txpool, miner, and trace for interacting with Ethereum-compatible networks, smart contracts, and node operations.\n\nContact Support:\n Name: Hyperledger Besu Community",
+      "type": "text/plain"
+    }
+  }
+}
