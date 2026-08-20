@@ -75,6 +75,11 @@ apis:
   humanURL: https://www.hyperledger.org/projects/hyperledger-indy
   tags:
   - Decentralized Identity
+  - DID
+  - Identity
+  - Self-Sovereign Identity
+  tags_raw:
+  - Decentralized Identity
   - Did
   - Identity
   - Self-Sovereign Identity
@@ -104,6 +109,8 @@ apis:
   humanURL: https://besu.hyperledger.org/
   baseURL: https://besu.example.com
   tags:
+  - ETH
+  tags_raw:
   - Eth
   properties:
   - type: OpenAPI
