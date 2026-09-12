@@ -131,6 +131,8 @@ apis:
   - type: GitHub
     url: https://github.com/hyperledger/besu
 common:
+  - type: Website
+    url: https://www.lfdecentralizedtrust.org/
   - type: AgenticAccess
     url: agentic-access/hyperledger-agentic-access.yml
   - type: DomainSecurity
