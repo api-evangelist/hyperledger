@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Hyperledger Besu JSON-RPC Eth API
   description: Hyperledger Besu is an Ethereum client written in Java that exposes a JSON-RPC 2.0 API over HTTP and WebSockets. The API provides namespaces including admin, debug, eth, net, web3, txpool, miner, and trace for interacting with Ethereum-compatible networks, smart contracts, and node operations.
@@ -38,29 +38,6 @@ paths:
                 $ref: '#/components/schemas/JsonRpcResponse'
 components:
   schemas:
-    JsonRpcResponse:
-      type: object
-      required:
-      - jsonrpc
-      - id
-      properties:
-        jsonrpc:
-          type: string
-          enum:
-          - '2.0'
-        id:
-          oneOf:
-          - type: integer
-          - type: string
-        result: {}
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-            data: {}
     JsonRpcRequest:
       type: object
       required:
@@ -93,6 +70,29 @@ components:
           oneOf:
           - type: integer
           - type: string
+    JsonRpcResponse:
+      type: object
+      required:
+      - jsonrpc
+      - id
+      properties:
+        jsonrpc:
+          type: string
+          enum:
+          - '2.0'
+        id:
+          oneOf:
+          - type: integer
+          - type: string
+        result: {}
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+            data: {}
 externalDocs:
   description: Hyperledger Besu API Reference
   url: https://besu.hyperledger.org/public-networks/reference/api
