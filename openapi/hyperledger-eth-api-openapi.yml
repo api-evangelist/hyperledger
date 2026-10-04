@@ -38,6 +38,29 @@ paths:
                 $ref: '#/components/schemas/JsonRpcResponse'
 components:
   schemas:
+    JsonRpcResponse:
+      type: object
+      required:
+      - jsonrpc
+      - id
+      properties:
+        jsonrpc:
+          type: string
+          enum:
+          - '2.0'
+        id:
+          oneOf:
+          - type: integer
+          - type: string
+        result: {}
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+            data: {}
     JsonRpcRequest:
       type: object
       required:
@@ -70,29 +93,6 @@ components:
           oneOf:
           - type: integer
           - type: string
-    JsonRpcResponse:
-      type: object
-      required:
-      - jsonrpc
-      - id
-      properties:
-        jsonrpc:
-          type: string
-          enum:
-          - '2.0'
-        id:
-          oneOf:
-          - type: integer
-          - type: string
-        result: {}
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-            data: {}
 externalDocs:
   description: Hyperledger Besu API Reference
   url: https://besu.hyperledger.org/public-networks/reference/api
