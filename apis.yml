@@ -139,6 +139,12 @@ apis:
   - type: GitHub
     url: https://github.com/hyperledger/besu
 common:
+  - type: Plans
+    url: plans/hyperledger-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/hyperledger-rate-limits.yml
+  - type: FinOps
+    url: finops/hyperledger-finops.yml
   - type: Website
     url: https://www.lfdecentralizedtrust.org/
   - type: AgenticAccess
