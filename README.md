@@ -1,4 +1,4 @@
-# Hyperledger (hyperledger)
+# Hyperledger
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,141 +66,143 @@
 
 Hyperledger is an open source collaborative effort created to advance cross-industry blockchain technologies, originally hosted under the Linux Foundation and now stewarded by LF Decentralized Trust. It hosts enterprise-grade blockchain frameworks including Fabric, Besu, Indy, Iroha, and Cacti, along with tools like Firefly and Caliper for blockchain development, identity, and operations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hyperledger/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hyperledger/refs/heads/main/apis.yml)
+**Areas:** Blockchain · Distributed Ledger · Enterprise · Linux Foundation · Smart Contracts
 
-## Scope
+## Hyperledger on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Hyperledger is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hyperledger/](https://apis.io/providers/hyperledger/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Blockchain
-- Distributed Ledger
-- Enterprise
-- Linux Foundation
-- Smart Contracts
+- [Hyperledger Fabric API](https://apis.io/apis/hyperledger/hyperledger-fabric-api/) — Hyperledger Fabric is a permissioned distributed ledger platform. Programmatic access is provided via the Fabric Gateway, peer gRPC APIs, and SDKs for…
+- [Hyperledger FireFly API](https://apis.io/apis/hyperledger/hyperledger-firefly-api/) — Hyperledger FireFly is a multiparty system orchestration framework providing REST APIs for tokens, messages, identities, contracts, and events across…
+- [Hyperledger Indy API](https://apis.io/apis/hyperledger/hyperledger-indy-api/) — Hyperledger Indy provides tools, libraries, and reusable components for decentralized identities rooted on blockchains. APIs are exposed via the Indy SDK…
+- [Hyperledger Cacti API](https://apis.io/apis/hyperledger/hyperledger-cacti-api/) — Hyperledger Cacti (formerly Cactus) is a pluggable enterprise-grade framework for cross-chain transactions, providing connector plugins and REST APIs for…
+- [Hyperledger Eth API](https://apis.io/apis/hyperledger/hyperledger-eth-api/) — Standard Ethereum JSON-RPC methods.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Hyperledger Besu API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Hyperledger Besu is an Ethereum client written in Java exposing JSON-RPC APIs for blockchain interaction including admin, debug, eth, net, web3, txpool, miner, and trace namespaces.
+- [Hyperledger Agentic Access](https://apis.io/agentic-access/hyperledger/hyperledger-agentic-access/)
 
-- **Human URL:** [https://besu.hyperledger.org/](https://besu.hyperledger.org/)
-- **Base URL:** `https://besu.example.com`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Blockchain
-- Ethereum
-- Json-Rpc
-- Smart Contracts
+- [JsonRpcRequest](https://apis.io/schemas/hyperledger/hyperledger-jsonrpcrequest/)
+- [JsonRpcResponse](https://apis.io/schemas/hyperledger/hyperledger-jsonrpcresponse/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://besu.hyperledger.org/public-networks/reference/api)
-- [Git Hub](https://github.com/hyperledger/besu)
-- [OpenAPI](openapi/hyperledger-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/hyperledger.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hyperledger.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### Hyperledger Fabric API
+- [Hyperledger Structure](https://apis.io/json-structure/hyperledger/hyperledger-structure/)
 
-Hyperledger Fabric is a permissioned distributed ledger platform. Programmatic access is provided via the Fabric Gateway, peer gRPC APIs, and SDKs for chaincode invocation, ledger queries, and channel administration.
+#### Vocabulary (1)
 
-- **Human URL:** [https://hyperledger-fabric.readthedocs.io/](https://hyperledger-fabric.readthedocs.io/)
+The provider's domain terms, defined.
 
-#### Tags
+- [Hyperledger Domain Vocabulary](https://apis.io/vocabularies/hyperledger/hyperledger-vocabulary/)
 
-- Blockchain
-- Distributed Ledger
-- Permissioned
-- Smart Contracts
+#### Collections (2)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://hyperledger-fabric.readthedocs.io/en/latest/)
-- [Gateway Docs](https://hyperledger.github.io/fabric-gateway/)
-- [Git Hub](https://github.com/hyperledger/fabric)
-- [Postman Collection](collections/hyperledger.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hyperledger.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Hyperledger Besu JSON-RPC API](https://apis.io/collections/hyperledger/open-hyperledger/)
+- [Hyperledger Besu JSON-RPC Eth API](https://apis.io/collections/hyperledger/open-hyperledger-eth-api/)
 
-### Hyperledger FireFly API
+#### Governance rules (1)
 
-Hyperledger FireFly is a multiparty system orchestration framework providing REST APIs for tokens, messages, identities, contracts, and events across multiple blockchain protocols.
+Spectral rulesets for the provider's contracts.
 
-- **Human URL:** [https://hyperledger.github.io/firefly/](https://hyperledger.github.io/firefly/)
+- [Hyperledger — jsonschema rules](https://apis.io/rules/hyperledger/hyperledger-jsonschema-spectral-rules/)
 
-#### Tags
+#### Security (1)
 
-- Blockchain
-- Multiparty
-- Tokens
-- Web3
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Hyperledger Domain Security](https://apis.io/security/hyperledger/hyperledger-domain-security/)
 
-- [Documentation](https://hyperledger.github.io/firefly/latest/reference/api/)
-- [Git Hub](https://github.com/hyperledger/firefly)
-- [Postman Collection](collections/hyperledger.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hyperledger.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Hyperledger Indy API
+Published plans, tiers and prices.
 
-Hyperledger Indy provides tools, libraries, and reusable components for decentralized identities rooted on blockchains. APIs are exposed via the Indy SDK and Indy Node REST endpoints.
+- [Hyperledger Plans Pricing](https://apis.io/plans/hyperledger/hyperledger-plans-pricing/)
 
-- **Human URL:** [https://www.hyperledger.org/projects/hyperledger-indy](https://www.hyperledger.org/projects/hyperledger-indy)
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Decentralized Identity
-- Did
-- Identity
-- Self-Sovereign Identity
+- [Hyperledger Rate Limits](https://apis.io/rate-limits/hyperledger/hyperledger-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://hyperledger-indy.readthedocs.io/)
-- [Git Hub](https://github.com/hyperledger/indy-node)
-- [Postman Collection](collections/hyperledger.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hyperledger.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-### Hyperledger Cacti API
+- [Hyperledger Finops](https://apis.io/finops/hyperledger/hyperledger-finops/)
 
-Hyperledger Cacti (formerly Cactus) is a pluggable enterprise-grade framework for cross-chain transactions, providing connector plugins and REST APIs for interoperability across DLTs.
+## Where to find this API
 
-- **Human URL:** [https://hyperledger-cacti.github.io/cacti/](https://hyperledger-cacti.github.io/cacti/)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Blockchain
-- Interoperability
-- Cross-Chain
-
-#### Properties
-
-- [Documentation](https://hyperledger-cacti.github.io/cacti/)
-- [Git Hub](https://github.com/hyperledger/cacti)
-- [Postman Collection](collections/hyperledger.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hyperledger.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/hyperledger-project)
+- [Website](https://www.lfdecentralizedtrust.org/)
 - [Documentation](https://www.hyperledger.org/use)
-- [L F Decentralized Trust](https://lfdecentralizedtrust.org/)
-- [Git Hub Org](https://github.com/hyperledger)
-- [L F D T Git Hub](https://github.com/LF-Decentralized-Trust)
-- [Wiki](https://wiki.lfdecentralizedtrust.org/)
+- [Blog](https://www.lfdecentralizedtrust.org/blog/rss.xml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 20.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 41.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hyperledger/](https://apis.io/providers/hyperledger/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hyperledger: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hyperledger/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
